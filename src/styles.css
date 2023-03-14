@@ -97,6 +97,10 @@ svg {
   width: 17px;
 }
 
+.main-container {
+  margin-top: 125px;
+}
+
 .movie-container-row {
   row-gap: 28px;
 }

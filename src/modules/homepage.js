@@ -1,5 +1,5 @@
 const homePage = () => `
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img
@@ -79,7 +79,7 @@ const homePage = () => `
     </div>
   </nav>
 
-  <main class="container mt-4">
+  <main class="container main-container">
     <div class="row movie-container-row">
     </div>
   </main>
