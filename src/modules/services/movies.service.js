@@ -19,6 +19,17 @@ class MovieService {
     }
   };
 
+  searchShows = async (search) => {
+    try {
+      const response = await axios.get(
+        `https://api.tvmaze.com/search/shows?q=${search}`,
+      );
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  };
+
   saveMovies = (movies) => {
     this.movieLists = movies;
   };
