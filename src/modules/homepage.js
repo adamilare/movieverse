@@ -57,6 +57,7 @@ const homePage = () => `
             type="search"
             placeholder="Search"
             aria-label="Search"
+            required
           />
           <button class="btn btn-outline-secondary searchBtn" type="submit">
             <svg
