@@ -3,7 +3,7 @@ const homePage = () => `
     <div class="container">
       <a class="navbar-brand" href="#">
         <img
-          src="./assets/movieverse-logo.png"
+          src=""
           width="22%"
           alt="movieverse"
         />
