@@ -2,6 +2,24 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+  box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(71, 70, 70);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #212428;
@@ -90,9 +108,22 @@ svg {
   color: #c4cfde;
   box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
   border-radius: 1rem;
-  overflow: hidden;
   cursor: pointer;
   height: 100%;
+  overflow: hidden;
+}
+
+.movie-card .rating_badge {
+  right: -15px;
+  bottom: 18%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bolder;
+  box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
 }
 
 .movie-card .image-container {
@@ -109,7 +140,8 @@ svg {
 
 .movie-card .likeBtn svg {
   width: 28px;
-  color: white;
+  color: #f64e60;
+  fill: #f64e60;
 }
 
 .likeBtn {
