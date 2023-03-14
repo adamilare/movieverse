@@ -3,8 +3,11 @@ import axios from 'axios';
 class MovieService {
   moveAPI;
 
+  movieLists;
+
   constructor() {
     this.moveAPI = 'https://api.tvmaze.com/shows';
+    this.movieLists = [];
   }
 
   getAllTvShows = async () => {
@@ -15,6 +18,14 @@ class MovieService {
       return error;
     }
   };
+
+  saveMovies = (movies) => {
+    this.movieLists = movies;
+  };
+
+  getAllMovies = () => this.movieLists;
 }
 
-export default MovieService;
+const movieservice = new MovieService();
+
+export default movieservice;

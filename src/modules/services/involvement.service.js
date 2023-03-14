@@ -13,7 +13,7 @@ class InvolvementAPI {
   saveMovieLikes = async (movieid) => {
     try {
       const response = await axios.post(
-        `${this.baseAPI}/apps/${this.appid}/likes/`,
+        `${this.baseAPI}apps/${this.appid}/likes`,
         {
           item_id: movieid,
         },

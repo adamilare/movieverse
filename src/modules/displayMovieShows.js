@@ -1,3 +1,6 @@
+import movieservice from './services/movies.service.js';
+import displayTotalShows from './totalMovies.js';
+
 const getMoviesInHtml = (movies) => {
   if (movies.length) {
     let moviesHtml = '';
@@ -13,6 +16,11 @@ const getMoviesInHtml = (movies) => {
       moviesHtml += `
               <div class="col-lg-4 col-md-6 col-sm-12 col-12">
               <div class="movie-card card">
+              <span
+              class="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle rating_badge"
+            >
+            ${movie.rating.average}
+            </span>
                 <div class="image-container" style="background-image: url(${
   movie.image.original
 })">
@@ -58,14 +66,9 @@ const getMoviesInHtml = (movies) => {
   return '';
 };
 
-const displayTotalShows = (movies) => {
-  const tvshowsLink = document.querySelectorAll('.navbar-nav li');
-  tvshowsLink[0].children[0].children[0].textContent = movies.length;
-};
-
 const displayMovieShows = (movies, movieListContainer) => {
-  displayTotalShows(movies);
   movieListContainer.innerHTML = getMoviesInHtml(movies);
+  displayTotalShows();
 };
 
 const mapMoviesAndLikes = (likes, movieList) => {
@@ -81,6 +84,7 @@ const mapMoviesAndLikes = (likes, movieList) => {
     };
   });
 
+  movieservice.saveMovies(mappedMoviesresult);
   displayMovieShows(mappedMoviesresult, movieListContainer);
 };
 

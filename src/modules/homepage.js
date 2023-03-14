@@ -1,9 +1,9 @@
 const homePage = () => `
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img
-          src="./assets/movieverse-logo.png"
+          src=""
           width="22%"
           alt="movieverse"
         />
@@ -42,12 +42,12 @@ const homePage = () => `
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movies <span class="badge">4</span></a
+              >Movies <span class="badge">0</span></a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movie Schedules <span class="badge">4</span></a
+              >Movie Schedules <span class="badge">0</span></a
             >
           </li>
         </ul>
@@ -79,10 +79,17 @@ const homePage = () => `
     </div>
   </nav>
 
-  <main class="container mt-4">
+  <main class="container main-container">
     <div class="row movie-container-row">
     </div>
   </main>
+
+  <footer>
+    <div class="container">
+        <p class="mb-0">Created by Microverse Under CC License</p>
+    </div>
+  </footer>
+
     `;
 
 export default homePage;
