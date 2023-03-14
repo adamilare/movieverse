@@ -1,3 +1,2 @@
 import './styles.css';
-
-console.log('webpack working');
+import './assets/movieverse-logo.png';
