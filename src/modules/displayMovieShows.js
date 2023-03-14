@@ -13,14 +13,16 @@ const getMoviesInHtml = (movies) => {
       moviesHtml += `
               <div class="col-lg-4 col-md-6 col-sm-12 col-12">
               <div class="movie-card card">
-                <div class="image-container" style="background-image: url(${movie.image.original})">
+                <div class="image-container" style="background-image: url(${
+  movie.image.original
+})">
                 </div>
                 <div class="card-body">
                   <div class="d-flex align-items-center justify-content-between">
                     <h5 class="card-title">${movie.name}</h5>
       
                     <div class="flex">
-                      <button type="button" class="likeBtn">
+                      <button type="button" class="likeBtn" id="${movie.id}">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -36,7 +38,7 @@ const getMoviesInHtml = (movies) => {
                           />
                         </svg>
                       </button>
-                      <span>2 likes</span>
+                      <span>${movie.likes ? movie.likes : 0} likes</span>
                     </div>
                   </div>
                   <p class="card-text">
@@ -62,9 +64,24 @@ const displayTotalShows = (movies) => {
 };
 
 const displayMovieShows = (movies, movieListContainer) => {
-  const result = getMoviesInHtml(movies);
   displayTotalShows(movies);
-  movieListContainer.innerHTML = result;
+  movieListContainer.innerHTML = getMoviesInHtml(movies);
 };
 
-export default displayMovieShows;
+const mapMoviesAndLikes = (likes, movieList) => {
+  const movieListContainer = document.querySelector('.movie-container-row');
+
+  const mappedMoviesresult = movieList.map((movie) => {
+    const moveLikeInfo = likes.find(
+      (like) => Number(like.item_id) === Number(movie.id),
+    );
+    return {
+      ...movie,
+      likes: moveLikeInfo ? moveLikeInfo.likes : 0,
+    };
+  });
+
+  displayMovieShows(mappedMoviesresult, movieListContainer);
+};
+
+export { displayMovieShows, mapMoviesAndLikes };

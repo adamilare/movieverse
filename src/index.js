@@ -1,6 +1,12 @@
 import './styles.css';
 import './assets/movieverse-logo.png';
-import { homePage, MovieService, displayMovieShows } from './modules';
+import {
+  homePage,
+  MovieService,
+  displayMovieShows,
+  likeMovie,
+  getLikes,
+} from './modules';
 
 const mainContainer = document.querySelector('main');
 const movieservice = new MovieService();
@@ -10,10 +16,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     const movieListContainer = document.querySelector('.movie-container-row');
+    likeMovie(movieListContainer);
     movieservice.getAllTvShows().then((result) => {
       if (result && result.length) {
         displayMovieShows(result, movieListContainer);
       }
+      getLikes(result);
     });
   }, 500);
 });
