@@ -92,6 +92,19 @@ svg {
   border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
+  height: 100%;
+}
+
+.movie-card .image-container {
+  background-position: center;
+  background-size: contain;
+  height: 500px;
+}
+
+.movie-card .card-text {
+  display: flex;
+  column-gap: 6px;
+  flex-wrap: nowrap;
 }
 
 .movie-card .likeBtn svg {
