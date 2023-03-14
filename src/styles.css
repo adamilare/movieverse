@@ -158,6 +158,14 @@ svg {
   padding: 6px 11px;
 }
 
+footer {
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  border-top: 1px solid #494646;
+  padding: 25px;
+  color: #c4cfde;
+  margin-top: 40px;
+}
+
 @media (min-width: 992px) {
   .navbar-brand {
     padding: 10px;
