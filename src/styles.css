@@ -1,3 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: slategrey;
+  font-family: 'Poppins', sans-serif;
+  background-color: #212428;
+}
+
+.navbar {
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  border-bottom: 1px solid #494646;
+  box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  padding: 18px;
+}
+
+.navbar-brand {
+  color: #c4cfde;
+}
+
+.navbar-brand:hover {
+  color: #f64e60;
+}
+
+.navbar-toggler svg {
+  width: 39px;
+  display: inline-block;
+  color: white;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-link {
+  color: #c4cfde;
+  padding: 15px 10px;
+}
+
+.nav-link:hover {
+  color: #c4cfde;
+}
+
+.nav-link.active {
+  color: #f64e60 !important;
+}
+
+.nav-link.active .badge {
+  background-color: #8f0d1a;
+  border-color: #740914;
+}
+
+.nav-link .badge {
+  background-color: transparent;
+  border: 1px solid #f64e60;
+}
+
+.form-control {
+  background-color: transparent;
+  color: #c4cfde;
+  border: 1px solid #515567;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: #ffe2e5 !important;
+  box-shadow: 0 0 0 0.25rem rgb(253 13 13 / 25%);
+}
+
+@media (min-width: 992px) {
+  .navbar-brand {
+    padding: 10px;
+  }
+
+  .nav-link {
+    padding-right: 17px;
+  }
 }
