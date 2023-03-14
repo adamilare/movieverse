@@ -7,6 +7,10 @@ body {
   background-color: #212428;
 }
 
+svg {
+  display: inline-block;
+}
+
 .navbar {
   background: linear-gradient(145deg, #1e2024, #23272b);
   border-bottom: 1px solid #494646;
@@ -25,7 +29,6 @@ body {
 
 .navbar-toggler svg {
   width: 39px;
-  display: inline-block;
   color: white;
 }
 
@@ -74,7 +77,49 @@ body {
 
 .navbar form button svg {
   width: 17px;
-  display: inline-block;
+}
+
+.movie-container-row {
+  row-gap: 28px;
+}
+
+.movie-card {
+  position: relative;
+  border: none;
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  color: #c4cfde;
+  box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+}
+
+.movie-card .image-container {
+  background-position: center;
+  background-size: contain;
+  height: 500px;
+}
+
+.movie-card .card-text {
+  display: flex;
+  column-gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.movie-card .likeBtn svg {
+  width: 28px;
+  color: white;
+}
+
+.likeBtn {
+  background: transparent;
+  border: none;
+}
+
+.movie-card .card-text .badge {
+  font-weight: 400;
+  padding: 6px 11px;
 }
 
 @media (min-width: 992px) {
