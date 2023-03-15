@@ -1,10 +1,10 @@
-import movieservice from "./services/movies.service.js";
-import InvolvementAPI from "./services/involvement.service.js";
+import movieservice from './services/movies.service.js';
+import InvolvementAPI from './services/involvement.service.js';
 
 const invovlementapi = new InvolvementAPI();
 
 const getGenreList = (movie) => {
-  let genreHtml = "";
+  let genreHtml = '';
 
   if (movie.genres.length) {
     movie.genres.forEach((genre) => {
@@ -15,13 +15,15 @@ const getGenreList = (movie) => {
   return genreHtml;
 };
 
-const modalContent = (movie) => {
-  return `
+const modalContent = (movie) => `
        <div class="row">
-      <div class="col-xs-12 col-sm-5 col-md-5 image-container" style="background-image: url(${
-        movie.image.original
-      })"> </div>
-      <div class="col-xs-12 col-sm-7 col-md-7" id="modal-movie-info">
+      <div class="col-xs-12 col-sm-12 col-md-12 modal-img-wrapper")">
+        <div class="image-container" style="background-image: url(${
+  movie.image ? movie.image.original : ''
+})">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12" id="modal-movie-info">
         <h1 class="modal-title">${movie.name}</h1>
         ${movie.summary}
         <p class="modal-genres">${getGenreList(movie)}</p>
@@ -76,30 +78,28 @@ const modalContent = (movie) => {
           name="comment"          rows="3"
           placeholder="Your insights"
         ></textarea>
-        <button type="submit" id="submit-comment" class="btn btn-primary">Comment</button>
+        <button type="submit" id="submit-comment" class="btn btn-danger">Comment</button>
       </form>
     </div>
     `;
-};
 
-const commentItem = ({ creation_date, username, comment }) => {
-  const listItem = document.createElement("li");
-  listItem.className = "comment-item";
+const commentItem = (comment) => {
+  const listItem = document.createElement('li');
+  listItem.className = 'comment-item';
 
   listItem.innerHTML = `
-          <span class="comment-time">${creation_date}</span>
-          <span class="commenter">${username}:</span>
-          <span class="comment-body">${comment}</span>
+          <span class="comment-time">${comment.creation_date}</span>
+          <span class="commenter">${comment.username}:</span>
+          <span class="comment-body">${comment.comment}</span>
     `;
 
   return listItem;
 };
 
 const displayComments = (modalContainer, movieId) => {
-  const commentsContainer = modalContainer.querySelector(".modal-comments ul");
-  const commentCountView = modalContainer.querySelector("#modal-commets-count");
-  commentsContainer.innerHTML = "";
-  console.log("commentsContainer", commentsContainer);
+  const commentsContainer = modalContainer.querySelector('.modal-comments ul');
+  const commentCountView = modalContainer.querySelector('#modal-commets-count');
+  commentsContainer.innerHTML = '';
   invovlementapi.getMovieComments(movieId).then((comments) => {
     commentCountView.innerHTML = comments.length ?? 0;
     if (comments.length) {
@@ -121,10 +121,9 @@ const handleSubmit = (modalContainer, movieId, { commenter, comment }) => {
 };
 
 const getMovieDetailsForDisplay = (movieListContainer, modalContainer) => {
-  movieListContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("addComment")) {
-      const id = e.target.getAttribute("id");
-      console.log("modalContainer", modalContainer);
+  movieListContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('addComment')) {
+      const id = e.target.getAttribute('id');
 
       const selectedMovie = movieservice
         .getAllMovies()
@@ -133,9 +132,9 @@ const getMovieDetailsForDisplay = (movieListContainer, modalContainer) => {
       modalContainer.innerHTML = modalContent(selectedMovie);
       displayComments(modalContainer, selectedMovie.id);
 
-      const form = document.querySelector("#form-comment");
+      const form = document.querySelector('#form-comment');
 
-      form.addEventListener("submit", (event) => {
+      form.addEventListener('submit', (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
 
@@ -150,17 +149,4 @@ const getMovieDetailsForDisplay = (movieListContainer, modalContainer) => {
   });
 };
 
-const addComment = (modalContainer) => {
-  modalContainer.addEventListener("click", (e) => {
-    let movieid;
-
-    if (e.target.matches("button #submit-comment")) {
-      e.preventDefault();
-      console.log("Comment added");
-
-      return;
-    } else return;
-  });
-};
-
-export { addComment, getMovieDetailsForDisplay };
+export { getMovieDetailsForDisplay };
