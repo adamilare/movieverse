@@ -17,8 +17,6 @@ const getGenreList = (movie) => {
 
 const modalContent = (movie) => {
   return `
-        <button type="button" class="btn-close modal-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  
-
        <div class="row">
       <div class="col-xs-12 col-sm-5 col-md-5 image-container" style="background-image: url(${
         movie.image.original

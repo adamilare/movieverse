@@ -13,7 +13,7 @@ const mainContainer = document.querySelector("main");
 
 window.addEventListener("DOMContentLoaded", () => {
   mainContainer.innerHTML = homePage();
-  const modalContainer = document.querySelector(".modal-content");
+  const modalContainer = document.querySelector(".modal .modal-body");
 
   searchMovies();
 
