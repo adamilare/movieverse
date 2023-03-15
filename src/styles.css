@@ -240,6 +240,8 @@ footer {
 
 #modal-comments ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #modal-comments li {
@@ -256,7 +258,7 @@ footer {
 
 .modal p.modal-genres {
   display: inline-flex;
-  gap: 5px;
+  gap: 8px;
 }
 
 .comment-time,
@@ -267,8 +269,14 @@ footer {
   align-items: center;
 }
 
+.comment-time,
+.commenter {
+  flex-shrink: 0;
+  font-style: italic;
+}
+
 .comment-body {
-  flex-grow: 1;
+  flex: 1;
   flex-wrap: wrap;
   white-space: pre-wrap;
 }

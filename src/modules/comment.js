@@ -96,18 +96,44 @@ const commentItem = (comment) => {
   return listItem;
 };
 
+const commentsCounter = (modalContainer) => {
+  const commentsItems = modalContainer.querySelectorAll('.comment-item');
+
+  let validCommentCount = 0;
+
+  commentsItems.forEach((commentItem) => {
+    const spans = commentItem.querySelectorAll('span');
+    let validSpanCount = 0;
+    spans.forEach((span) => {
+      if (span.textContent.trim() !== '') {
+        validSpanCount += 1;
+      }
+    });
+
+    if (validSpanCount === spans.length) {
+      validCommentCount += 1;
+    }
+  });
+
+  return validCommentCount;
+};
+
 const displayComments = (modalContainer, movieId) => {
   const commentsContainer = modalContainer.querySelector('.modal-comments ul');
   const commentCountView = modalContainer.querySelector('#modal-commets-count');
+
   commentsContainer.innerHTML = '';
   invovlementapi.getMovieComments(movieId).then((comments) => {
-    commentCountView.innerHTML = comments.length ?? 0;
     if (comments.length) {
       comments.forEach((comment) => {
         commentsContainer.appendChild(commentItem(comment));
       });
     }
   });
+
+  setTimeout(() => {
+    commentCountView.innerHTML = commentsCounter(modalContainer);
+  }, 500);
 };
 
 const handleSubmit = (modalContainer, movieId, { commenter, comment }) => {
@@ -130,6 +156,9 @@ const getMovieDetailsForDisplay = (movieListContainer, modalContainer) => {
         .find((movie) => movie.id === Number(id));
 
       modalContainer.innerHTML = modalContent(selectedMovie);
+      const modalTitle = modalContainer.parentNode.querySelector('h1');
+
+      modalTitle.innerHTML = selectedMovie.name;
       displayComments(modalContainer, selectedMovie.id);
 
       const form = document.querySelector('#form-comment');
@@ -144,6 +173,7 @@ const getMovieDetailsForDisplay = (movieListContainer, modalContainer) => {
         });
 
         handleSubmit(modalContainer, selectedMovie.id, formObject);
+        form.reset();
       });
     }
   });
