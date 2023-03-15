@@ -42,12 +42,12 @@ const homePage = () => `
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movies <span class="badge">0</span></a
+              >Movies</a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movie Schedules <span class="badge">0</span></a
+              >Movie Schedules</a
             >
           </li>
         </ul>
@@ -57,8 +57,9 @@ const homePage = () => `
             type="search"
             placeholder="Search"
             aria-label="Search"
+            required
           />
-          <button class="btn btn-outline-secondary" type="submit">
+          <button class="btn btn-outline-secondary searchBtn" type="submit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

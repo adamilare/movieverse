@@ -19,10 +19,10 @@ const getMoviesInHtml = (movies) => {
               <span
               class="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle rating_badge"
             >
-            ${movie.rating.average}
+            ${movie.rating.average ? movie.rating.average : '0.0'}
             </span>
                 <div class="image-container" style="background-image: url(${
-  movie.image.original
+  movie.image ? movie.image.original : ''
 })">
                 </div>
                 <div class="card-body">
