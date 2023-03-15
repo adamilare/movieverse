@@ -87,6 +87,7 @@ svg {
   background-color: transparent;
   border-color: #ffe2e5 !important;
   box-shadow: 0 0 0 0.25rem rgb(253 13 13 / 25%);
+  color: #c4cfde;
 }
 
 .navbar form button {
@@ -119,7 +120,7 @@ svg {
 
 .movie-card .rating_badge {
   right: -15px;
-  bottom: 18%;
+  bottom: 20%;
   width: 35px;
   height: 35px;
   display: flex;
@@ -164,6 +165,11 @@ footer {
   padding: 25px;
   color: #c4cfde;
   margin-top: 40px;
+}
+
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
 }
 
 @media (min-width: 992px) {
