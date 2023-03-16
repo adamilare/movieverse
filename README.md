@@ -36,6 +36,7 @@ Movieverse curates mvoies to movie lovers; they can see, search, comment, and se
 ## 🛠 Screenshots <a name="screenshots"></a>
 
 <img src="./src/assets/screenshor-desktop.JPG" width="70%" alt="desktop screen" />
+<img src="./src/assets/mobile.png" width="70%" alt="mobile screen" />
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -54,7 +55,6 @@ Movieverse curates mvoies to movie lovers; they can see, search, comment, and se
 - **Search movies**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -114,7 +114,6 @@ Example:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Stephen Addae**
@@ -122,7 +121,6 @@ Example:
 - GitHub: [@Stephen-Adom](https://github.com/Stephen-Adom)
 - Twitter: [@stephen_alaska](https://twitter.com/stephen_alaska)
 - LinkedIn: [Stephen Addae](https://www.linkedin.com/in/stephen-addae-a32334154/)
-
 
 👤 **Damilare Adepoju**
 
@@ -133,13 +131,11 @@ Example:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Authentication**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -149,20 +145,17 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please give me a star⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 We are grateful to Microverse Inc that provided the guidelines for this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 📝 License <a name="license"></a>
 
