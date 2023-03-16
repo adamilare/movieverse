@@ -58,7 +58,7 @@ Movieverse curates mvoies to movie lovers; they can see, search, comment, and se
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Here is the link to the live demo version - [Movieverse](https://adamilare.github.io/javascript-capstone/)
+- Here is the link to the live demo version - [Movieverse](https://adamilare.github.io/javascript-capstone/dist)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
