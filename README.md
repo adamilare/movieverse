@@ -31,7 +31,7 @@
 
 # 📖 Movieverse <a name="about-project"></a>
 
-Movieverse curates mvoies to movie lovers; they can see, search, comment, and see ratings of their favourite movies. A full responsive website developed using webpack and ES6 Syntax
+Movieverse curates movies to movie lovers; they can see, search, comment, and see ratings of their favourite movies. A full responsive website developed using webpack and ES6 Syntax. Here is a video of a project overview. [movieverse video overview](https://drive.google.com/file/d/1T6qG-TjVQaUZpP5rzArTHaQBTIRXjiQ_/view?usp=sharing)
 
 ## 🛠 Screenshots <a name="screenshots"></a>
 
