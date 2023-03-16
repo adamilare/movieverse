@@ -1,10 +1,10 @@
-import movieservice from "./services/movies.service.js";
-import InvolvementAPI from "./services/involvement.service.js";
+import movieservice from './services/movies.service.js';
+import InvolvementAPI from './services/involvement.service.js';
 
 const invovlementapi = new InvolvementAPI();
 
 const getGenreList = (movie) => {
-  let genreHtml = "";
+  let genreHtml = '';
 
   if (movie.genres.length) {
     movie.genres.forEach((genre) => {
@@ -19,8 +19,8 @@ const modalContent = (movie) => `
        <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 modal-img-wrapper")">
         <div class="image-container" style="background-image: url(${
-          movie.image ? movie.image.original : ""
-        })">
+  movie.image ? movie.image.original : ''
+})">
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12" id="modal-movie-info">
@@ -84,8 +84,8 @@ const modalContent = (movie) => `
     `;
 
 const commentItem = (comment) => {
-  const listItem = document.createElement("li");
-  listItem.className = "comment-item";
+  const listItem = document.createElement('li');
+  listItem.className = 'comment-item';
 
   listItem.innerHTML = `
           <span class="comment-time">${comment.creation_date}</span>
@@ -97,15 +97,15 @@ const commentItem = (comment) => {
 };
 
 const commentsCounter = (modalContainer) => {
-  const commentsItems = modalContainer.querySelectorAll(".comment-item");
+  const commentsItems = modalContainer.querySelectorAll('.comment-item');
 
   let validCommentCount = 0;
 
   commentsItems.forEach((commentItem) => {
-    const spans = commentItem.querySelectorAll("span");
+    const spans = commentItem.querySelectorAll('span');
     let validSpanCount = 0;
     spans.forEach((span) => {
-      if (span.textContent.trim() !== "") {
+      if (span.textContent.trim() !== '') {
         validSpanCount += 1;
       }
     });
@@ -118,10 +118,10 @@ const commentsCounter = (modalContainer) => {
 };
 
 const displayComments = (modalContainer, movieId) => {
-  const commentsContainer = modalContainer.querySelector(".modal-comments ul");
-  const commentCountView = modalContainer.querySelector("#modal-commets-count");
+  const commentsContainer = modalContainer.querySelector('.modal-comments ul');
+  const commentCountView = modalContainer.querySelector('#modal-commets-count');
 
-  commentsContainer.innerHTML = "";
+  commentsContainer.innerHTML = '';
   invovlementapi.getMovieComments(movieId).then((comments) => {
     if (comments.length) {
       comments.forEach((comment) => {
@@ -146,23 +146,23 @@ const handleSubmit = (modalContainer, movieId, { commenter, comment }) => {
 };
 
 const getMovieDetailsForDisplay = (movieListContainer, modalContainer) => {
-  movieListContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("addComment")) {
-      const id = e.target.getAttribute("id");
+  movieListContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('addComment')) {
+      const id = e.target.getAttribute('id');
 
       const selectedMovie = movieservice
         .getAllMovies()
         .find((movie) => movie.id === Number(id));
 
       modalContainer.innerHTML = modalContent(selectedMovie);
-      const modalTitle = modalContainer.parentNode.querySelector("h1");
+      const modalTitle = modalContainer.parentNode.querySelector('h1');
 
       modalTitle.innerHTML = selectedMovie.name;
       displayComments(modalContainer, selectedMovie.id);
 
-      const form = document.querySelector("#form-comment");
+      const form = document.querySelector('#form-comment');
 
-      form.addEventListener("submit", (event) => {
+      form.addEventListener('submit', (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
 
