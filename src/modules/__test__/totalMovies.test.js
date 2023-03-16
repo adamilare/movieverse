@@ -1,6 +1,6 @@
 import axios from 'axios';
-import movieservice from './services/movies.service.js';
-import displayTotalShows from './totalMovies.js';
+import movieservice from '../services/movies.service.js';
+import displayTotalShows from '../totalMovies.js';
 
 document.body.innerHTML = `
 <!DOCTYPE html>
