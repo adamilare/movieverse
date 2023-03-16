@@ -42,12 +42,12 @@ const homePage = () => `
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movies <span class="badge">0</span></a
+              >Movies</a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              >Movie Schedules <span class="badge">0</span></a
+              >Movie Schedules</a
             >
           </li>
         </ul>
@@ -57,8 +57,9 @@ const homePage = () => `
             type="search"
             placeholder="Search"
             aria-label="Search"
+            required
           />
-          <button class="btn btn-outline-secondary" type="submit">
+          <button class="btn btn-outline-secondary searchBtn" type="submit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -89,6 +90,25 @@ const homePage = () => `
         <p class="mb-0">Created by Microverse Under CC License</p>
     </div>
   </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-div" role="document">
+      <div class="modal-content">
+       <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Movie title</h1>
+        <button type="button" class="btn-close modal-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer" style="
+    display: none;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     `;
 

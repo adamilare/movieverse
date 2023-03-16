@@ -24,6 +24,33 @@ class InvolvementAPI {
     }
   };
 
+  saveMovieComment = async (movieId, commenter, comment) => {
+    try {
+      const response = await axios.post(
+        `${this.baseAPI}apps/${this.appid}/comments`,
+        {
+          item_id: movieId,
+          username: commenter,
+          comment,
+        },
+      );
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
+
+  getMovieComments = async (movieId) => {
+    try {
+      const response = await axios.get(
+        `${this.baseAPI}apps/${this.appid}/comments?item_id=${movieId}`,
+      );
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  };
+
   getAllMovieLikes = async () => {
     try {
       const response = await axios.get(
