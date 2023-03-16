@@ -159,6 +159,12 @@ footer {
   height: 1rem;
 }
 
+.modal-div {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .modal-content {
   background: var(--card-bkg);
 }
@@ -283,6 +289,12 @@ footer {
 
 .modal-content hr {
   margin: 30px 0;
+}
+
+@media (min-width: 768px) {
+  .modal-div {
+    max-width: 80%;
+  }
 }
 
 @media (min-width: 992px) {
