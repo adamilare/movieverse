@@ -36,7 +36,7 @@ Movieverse curates mvoies to movie lovers; they can see, search, comment, and se
 ## 🛠 Screenshots <a name="screenshots"></a>
 
 <img src="./src/assets/screenshor-desktop.JPG" width="70%" alt="desktop screen" />
-<img src="./src/assets/mobile.png" width="70%" alt="mobile screen" />
+<img src="./src/assets/mobile.png" width="20%" alt="mobile screen" />
 
 ## 🛠 Built With <a name="built-with"></a>
 
