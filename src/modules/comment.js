@@ -57,10 +57,13 @@ const modalContent = (movie) => `
         <h2>Comments</h2><span class="comments-count" id="modal-commets-count"></span>
       </div>
       <ul class="comments-list">
-        <li class="comment-item">
+        <li class="comment-item d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row">
           <span class="comment-time">15/03/2023</span
-          ><span class="commenter">Dare:</span
+          >
+          <div>
+          <span class="commenter">Dare:</span
           ><span class="comment-body"></span>
+          </div>
         </li>
       </ul>
     </div>
@@ -86,12 +89,14 @@ const modalContent = (movie) => `
 
 const commentItem = (comment) => {
   const listItem = document.createElement('li');
-  listItem.className = 'comment-item';
+  listItem.className = 'comment-item d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row';
 
   listItem.innerHTML = `
           <span class="comment-time">${comment.creation_date}</span>
-          <span class="commenter">${comment.username}:</span>
-          <span class="comment-body">${comment.comment}</span>
+          <div>
+            <span class="commenter">${comment.username}:</span>
+            <span class="comment-body">${comment.comment}</span>
+          </div>
     `;
 
   return listItem;
@@ -107,11 +112,9 @@ const displayComments = (modalContainer, movieId) => {
         commentsContainer.appendChild(commentItem(comment));
       });
     }
-  });
 
-  setTimeout(() => {
     displayTotalCommentsCount();
-  }, 1000);
+  });
 };
 
 const handleSubmit = (modalContainer, movieId, { commenter, comment }) => {

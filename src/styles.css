@@ -178,6 +178,10 @@ footer {
   color: var(--card-color);
 }
 
+#modal-commets-count {
+  font-size: 20px;
+}
+
 .modal-img-wrapper {
   display: flex;
   justify-content: center;
@@ -265,26 +269,6 @@ footer {
 .modal p.modal-genres {
   display: inline-flex;
   gap: 8px;
-}
-
-.comment-time,
-.commenter,
-.comment-body {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-.comment-time,
-.commenter {
-  flex-shrink: 0;
-  font-style: italic;
-}
-
-.comment-body {
-  flex: 1;
-  flex-wrap: wrap;
-  white-space: pre-wrap;
 }
 
 .modal-content hr {
