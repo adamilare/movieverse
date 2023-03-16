@@ -29,7 +29,7 @@ const getMoviesInHtml = (movies) => {
                   <div class="d-flex align-items-center justify-content-between">
                     <h5 class="card-title">${movie.name}</h5>
       
-                    <div class="flex">
+                    <div class="d-flex flex-column">
                       <button type="button" class="likeBtn" id="${movie.id}">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
